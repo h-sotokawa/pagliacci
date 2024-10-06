@@ -3,7 +3,7 @@ import os
 
 import aws_cdk as cdk
 
-from pagliacci.pagliacci_stack import PagliacciStack
+from pagliacci_infra.pagliacci_stack import PagliacciStack
 
 
 app = cdk.App()

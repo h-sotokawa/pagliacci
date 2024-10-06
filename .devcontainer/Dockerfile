@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
     npm \
+    vim \
     && rm -rf /var/lib/apt/lists/*
 
 # 最新のAWS CLIをインストール
