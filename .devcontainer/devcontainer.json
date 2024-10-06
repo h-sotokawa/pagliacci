@@ -1,27 +1,12 @@
 {
-  "name": "AWS CDK Development Container",
-  "dockerFile": "Dockerfile",
-  "context": ".",
-  "runArgs": ["--init"],
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash",
-    "python.pythonPath": "/workspace/venv/bin/python"
+  "name": "My Dev Container",
+  "build": {
+      "dockerfile": "Dockerfile"
   },
-  "extensions": [
-    "ms-python.python",
-    "ms-azuretools.vscode-docker",
-    "amazonwebservices.aws-toolkit-vscode"
-  ],
-  "postCreateCommand": "pip install -r requirements.txt && cdk bootstrap",
-  "remoteUser": "vscode",
-  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
-  "workspaceFolder": "/workspace",
-  "containerEnv": {
-    "AWS_ACCESS_KEY_ID": "${localEnv:AWS_ACCESS_KEY_ID}",
-    "AWS_SECRET_ACCESS_KEY": "${localEnv:AWS_SECRET_ACCESS_KEY}",
-    "AWS_REGION": "us-west-2"
-  },
-  "remoteEnv": {
-    "PYTHONPATH": "/workspace"
-  }
+  "settings": {},
+  "extensions": [],
+  "remoteUser": "root",
+  "mounts": [
+      "source=${localEnv:HOME}/.aws,target=/root/.aws,type=bind,consistency=cached"
+  ]
 }
