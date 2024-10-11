@@ -31,6 +31,8 @@ jobs:
           git init
           git secrets --install
           git secrets --register-aws
+          git secrets --add 'SECRET_KEY\s*=\s*["'\''][^"'\''\n]*["'\'']'
+          git secrets --add 'DB_PASSWORD\s*=\s*["'\''][^"'\''\n]*["'\'']'
           git secrets --list
           git secrets --scan
         shell: bash
