@@ -8,6 +8,8 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     npm \
     vim \
+    python3-venv \
+
 #     locales \
 #     console-setup \
 #     keyboard-configuration \
