@@ -33,7 +33,7 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
     && rm -rf awscliv2.zip aws
 
 # 最新のAWS CDK（Python版）をインストール
-RUN pip3 install --upgrade aws-cdk-lib --break-system-packages
+# RUN pip3 install --upgrade aws-cdk-lib --break-system-packages
 
 RUN npm install -g aws-cdk
 
