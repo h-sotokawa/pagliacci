@@ -6,6 +6,8 @@ import boto3
 # DynamoDBテーブル名を環境変数から取得
 TABLE_NAME = os.environ.get('TABLE_NAME')
 
+env = AWS_ACCOUNT_ID=692859952029
+
 # DynamoDBリソースを作成
 dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table(TABLE_NAME)
