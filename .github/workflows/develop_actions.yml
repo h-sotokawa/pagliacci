@@ -1,0 +1,28 @@
+name: Run git-secret on Push
+
+on:
+  push:
+    branches:
+      - develop
+      - main
+jobs:
+  run-git-secret:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: set git secret
+        run: |
+          git clone https://github.com/awslabs/git-secrets.git
+          cd git-secrets
+          make install
+          cd ../
+          ls -la
+          git init
+          git secrets --install
+          git secrets --register-aws
+          git secrets --list
+          git secrets --scan
+        shell: bash
