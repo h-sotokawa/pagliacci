@@ -1,0 +1,25 @@
+{
+    "name": "AWS CDK Development",
+    "remoteUser": "root",
+    "build": {
+      "dockerfile": "Dockerfile",
+      "context": "."
+    },
+    "mounts": [
+      "source=${localEnv:HOME}/.aws,target=/root/.aws,type=bind,consistency=cached"
+    ],
+    "extensions": [
+      "ms-python.python",
+      "amazonwebservices.aws-toolkit-vscode",
+      "ms-azuretools.vscode-docker"
+    ],
+    "settings": {
+      "terminal.integrated.defaultProfile.linux": "/bin/bash",
+      "python.pythonPath": "/usr/local/bin/python"
+    },
+    "postCreateCommand": "pip install -r requirements.txt",
+    "features": {
+      "docker-in-docker": "latest"
+    }
+  }
+  

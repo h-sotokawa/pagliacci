@@ -1,7 +1,7 @@
 import aws_cdk as core
 import aws_cdk.assertions as assertions
 
-from pagliacci_infra.pagliacci_stack import PagliacciStack
+from pagliacci_infra.pagliacci_dynamodb_stack import PagliacciStack
 
 # example tests. To run these tests, uncomment this file along with the example
 # resource in pagliacci/pagliacci_stack.py
