@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>体組成データ削除確認</h2>
+<p>{{ body_composition.measurement_date }}のデータを削除してもよろしいですか？</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">削除</button>
+    <a href="{% url 'body_list' %}">キャンセル</a>
+</form>
+{% endblock %}

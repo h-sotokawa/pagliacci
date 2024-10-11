@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>体組成データ一覧</h2>
+<a href="{% url 'body_add' %}">新規作成</a>
+<ul>
+    {% for data in body_compositions %}
+        <li>
+            {{ data.measurement_date }}: 体重 {{ data.weight }}kg
+            <a href="{% url 'body_edit' data.pk %}">編集</a>
+            <a href="{% url 'body_delete' data.pk %}">削除</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
